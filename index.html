@@ -3,60 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualization</title>
+    <title>Trading Values Visualization</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 min-h-screen">
     <div class="container max-w-6xl mx-auto p-8">
-        <header class="mb-12 text-center">
-            <h1 class="text-4xl font-bold text-white mb-4 tracking-tight">
+        <header class="mb-16 text-center">
+            <h1 class="text-5xl font-bold text-white mb-4 tracking-tight">
                 Trading Values Visualization
             </h1>
-            <p class="text-gray-400 max-w-2xl mx-auto">
-                Explore the values of Items to predict Values
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+                Explore item values to predict market trends
             </p>
-			<p class="text-gray-400 max-w-2xl mx-auto">
-                Made By Slymi
+            <p class="text-gray-400 mt-2">
+                Created by <span class="font-semibold text-blue-400">Slymi</span>
             </p>
-			
         </header>
 
-        <div class="bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-hidden mb-12">
-            <div class="p-6">
-
-
+        <div class="bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl overflow-hidden mb-16 transition-all duration-300 hover:shadow-blue-500/20">
+            <div class="p-8">
                 <div class="flourish-embed flourish-chart" data-src="visualisation/20391147">
                     <noscript>
                         <img src="https://public.flourish.studio/visualisation/20391147/thumbnail" 
                              width="100%" 
                              alt="chart visualization" 
-                             class="w-full"/>
+                             class="w-full rounded-lg"/>
                     </noscript>
                 </div>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-white mb-4">Sources</h3>
-                <p class="text-gray-300">
-					The Values have been mainly taken from Value lists, asking
-					good traders across diffrent places and checking the Market.
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-gray-800 border border-gray-700 rounded-xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+                <h3 class="text-2xl font-semibold text-white mb-4">Sources</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    The values have been primarily sourced from value lists, consultations with experienced traders across various platforms, and thorough market analysis.
                 </p>
             </div>
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-white mb-4">Want to help?</h3>
-                <p class="text-gray-300">
-					If you dont agree with some current values or want to help me 
-					find new Values feel free to contact me, my discord is "slymih"
+            <div class="bg-gray-800 border border-gray-700 rounded-xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+                <h3 class="text-2xl font-semibold text-white mb-4">Contribute</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    If you disagree with current valuations or want to contribute new data, please reach out. Connect with me on Discord: <span class="font-semibold text-blue-400">slymih</span>
                 </p>
             </div>
         </div>
 
-        <footer class="mt-12 text-center text-gray-500">
-            <p>© Trading Data Visualization Project</p>
+        <footer class="mt-16 text-center text-gray-400">
+            <p>&copy; 2025 Trading Data Visualization Project | All Rights Reserved</p>
         </footer>
     </div>
 </body>
