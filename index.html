@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Values Visualization</title>
+    <title>Divine Trading Values Visualization</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://public.flourish.studio/resources/embed.js"></script>
     <script>
@@ -12,111 +12,90 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                    }
+                        divine: '#FFD700',
+                        celestial: '#4B0082',
+                        ethereal: '#00FFFF',
+                    },
+                    fontFamily: {
+                        godly: ['Cinzel', 'serif'],
+                    },
                 }
             }
         }
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        .skeleton {
-            animation: skeleton-loading 1s linear infinite alternate;
+        @keyframes cosmic-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
-        @keyframes skeleton-loading {
-            0% { background-color: hsl(200, 20%, 70%); }
-            100% { background-color: hsl(200, 20%, 95%); }
+        @keyframes celestial-glow {
+            0%, 100% { box-shadow: 0 0 20px #FFD700; }
+            50% { box-shadow: 0 0 40px #FFD700; }
         }
-        .moon {
-            background: linear-gradient(45deg, #f6f1d5 0%, #fff 100%);
-            box-shadow: inset -10px 0 0 0 #e0e0e0;
-            transition: all 0.5s ease;
-        }
-        .dark .moon {
-            background: linear-gradient(45deg, #3b3b3b 0%, #616161 100%);
-            box-shadow: inset -10px 0 0 0 #2c2c2c;
-        }
-        .star {
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-        .dark .star {
-            opacity: 1;
-        }
+        .cosmic-pulse { animation: cosmic-pulse 3s infinite; }
+        .celestial-glow { animation: celestial-glow 2s infinite; }
+        .divine-gradient { background: linear-gradient(135deg, #4B0082, #00FFFF); }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-all duration-300">
-    <div class="container max-w-6xl mx-auto p-8">
-        <header class="mb-12 flex justify-between items-center">
-            <h1 class="text-4xl font-bold text-primary dark:text-secondary tracking-tight">
-                Trading Values Visualization
-            </h1>
-            <button id="darkModeToggle" class="relative w-12 h-12 rounded-full overflow-hidden focus:outline-none">
-                <div class="moon absolute inset-0 rounded-full"></div>
-                <div class="star absolute top-2 left-2 w-1 h-1 bg-yellow-300 rounded-full transform scale-0 transition-transform duration-300"></div>
-                <div class="star absolute top-4 right-3 w-1 h-1 bg-yellow-300 rounded-full transform scale-0 transition-transform duration-300 delay-100"></div>
-                <div class="star absolute bottom-3 left-4 w-1 h-1 bg-yellow-300 rounded-full transform scale-0 transition-transform duration-300 delay-200"></div>
-            </button>
-        </header>
+<body class="bg-black text-divine font-godly">
+    <div class="divine-gradient min-h-screen">
+        <div class="container max-w-6xl mx-auto p-8">
+            <header class="mb-12 flex justify-center items-center">
+                <h1 class="text-6xl font-bold text-divine tracking-wider cosmic-pulse">
+                    Divine Trading Values Visualization
+                </h1>
+            </header>
 
-        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center mb-8">
-            Explore the values of Items to predict Values
-        </p>
+            <p class="text-ethereal text-xl max-w-3xl mx-auto text-center mb-12">
+                Behold the cosmic dance of trading values, mortal
+            </p>
 
-        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-2xl overflow-hidden mb-12 transition-all duration-300">
-            <div class="p-6">
-                <div id="chartContainer" class="skeleton h-96 rounded-lg"></div>
-                <div class="flourish-embed flourish-chart hidden" data-src="visualisation/20391147">
-                    <noscript>
-                        <img src="https://public.flourish.studio/visualisation/20391147/thumbnail" 
-                             width="100%" 
-                             alt="chart visualization" 
-                             class="w-full"/>
-                    </noscript>
+            <div class="bg-celestial border-4 border-divine rounded-3xl shadow-2xl overflow-hidden mb-16 celestial-glow">
+                <div class="p-8">
+                    <div id="chartContainer" class="h-[600px] rounded-2xl"></div>
+                    <div class="flourish-embed flourish-chart hidden" data-src="visualisation/20391147">
+                        <noscript>
+                            <img src="https://public.flourish.studio/visualisation/20391147/thumbnail"
+                                 width="100%"
+                                 alt="Divine chart visualization"
+                                 class="w-full"/>
+                        </noscript>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 transition-all duration-300 hover:shadow-lg">
-                <h3 class="text-xl font-semibold text-primary dark:text-secondary mb-4">Sources</h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                    The Values have been mainly taken from Value lists, asking
-                    good traders across different places and checking the Market.
-                </p>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-celestial border-2 border-divine rounded-2xl p-8 transition-all duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-divine mb-4">Celestial Sources</h3>
+                    <p class="text-ethereal">
+                        These divine values have been bestowed upon us by the cosmic traders and ethereal market seers.
+                    </p>
+                </div>
+
+                <div class="bg-celestial border-2 border-divine rounded-2xl p-8 transition-all duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-divine mb-4">Contribute to the Divine</h3>
+                    <p class="text-ethereal">
+                        To offer your mortal wisdom or challenge the cosmic values, commune with the oracle "slymih" in the realm of Discord.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 transition-all duration-300 hover:shadow-lg">
-                <h3 class="text-xl font-semibold text-primary dark:text-secondary mb-4">Want to help?</h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                    If you don't agree with some current values or want to help me 
-                    find new Values feel free to contact me, my discord is "slymih"
-                </p>
-            </div>
+            <footer class="mt-16 text-center text-ethereal">
+                <p>© Eternal Trading Data Visualization | Crafted by the Divine Hand of Slymi</p>
+            </footer>
         </div>
-
-        <footer class="mt-12 text-center text-gray-500 dark:text-gray-400">
-            <p>© Trading Data Visualization Project | Made By Slymi</p>
-        </footer>
     </div>
 
     <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
         const chartContainer = document.getElementById('chartContainer');
         const flourishChart = document.querySelector('.flourish-embed');
-        const stars = document.querySelectorAll('.star');
-
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            stars.forEach(star => star.style.transform = document.documentElement.classList.contains('dark') ? 'scale(1)' : 'scale(0)');
-        });
 
         window.addEventListener('load', () => {
             setTimeout(() => {
-                chartContainer.classList.remove('skeleton');
                 chartContainer.classList.add('hidden');
                 flourishChart.classList.remove('hidden');
-            }, 2000);
+            }, 1000);
         });
     </script>
 </body>
