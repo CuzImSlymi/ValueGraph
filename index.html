@@ -3,30 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualization</title>
+    <title>Trading Values Visualization</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .skeleton {
+            animation: skeleton-loading 1s linear infinite alternate;
+        }
+        @keyframes skeleton-loading {
+            0% {
+                background-color: hsl(200, 20%, 70%);
+            }
+            100% {
+                background-color: hsl(200, 20%, 95%);
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
     <div class="container max-w-6xl mx-auto p-8">
         <header class="mb-12 text-center">
-            <h1 class="text-4xl font-bold text-white mb-4 tracking-tight">
+            <h1 class="text-4xl font-bold text-primary dark:text-secondary mb-4 tracking-tight">
                 Trading Values Visualization
             </h1>
-            <p class="text-gray-400 max-w-2xl mx-auto">
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Explore the values of Items to predict Values
             </p>
-			<p class="text-gray-400 max-w-2xl mx-auto">
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
                 Made By Slymi
             </p>
-			
+            <button id="darkModeToggle" class="mt-4 bg-primary dark:bg-secondary text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+                Toggle Dark Mode
+            </button>
         </header>
 
-        <div class="bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-hidden mb-12">
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-2xl overflow-hidden mb-12">
             <div class="p-6">
-
-
-                <div class="flourish-embed flourish-chart" data-src="visualisation/20391147">
+                <div id="chartContainer" class="skeleton h-96"></div>
+                <div class="flourish-embed flourish-chart hidden" data-src="visualisation/20391147">
                     <noscript>
                         <img src="https://public.flourish.studio/visualisation/20391147/thumbnail" 
                              width="100%" 
@@ -38,26 +65,44 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-white mb-4">Sources</h3>
-                <p class="text-gray-300">
-					The Values have been mainly taken from Value lists, asking
-					good traders across diffrent places and checking the Market.
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary dark:text-secondary mb-4">Sources</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    The Values have been mainly taken from Value lists, asking
+                    good traders across different places and checking the Market.
                 </p>
             </div>
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-white mb-4">Want to help?</h3>
-                <p class="text-gray-300">
-					If you dont agree with some current values or want to help me 
-					find new Values feel free to contact me, my discord is "slymih"
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary dark:text-secondary mb-4">Want to help?</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    If you don't agree with some current values or want to help me 
+                    find new Values feel free to contact me, my discord is "slymih"
                 </p>
             </div>
         </div>
 
-        <footer class="mt-12 text-center text-gray-500">
+        <footer class="mt-12 text-center text-gray-500 dark:text-gray-400">
             <p>© Trading Data Visualization Project</p>
         </footer>
     </div>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const chartContainer = document.getElementById('chartContainer');
+        const flourishChart = document.querySelector('.flourish-embed');
+
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                chartContainer.classList.remove('skeleton');
+                chartContainer.classList.add('hidden');
+                flourishChart.classList.remove('hidden');
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
